@@ -1,0 +1,35 @@
+/* FAQs.css */
+.heading {
+  border: 1px solid var(--primarycolor);
+  padding: 15px;
+  background-color: var(--primarycolor);
+}
+.heading h2 {
+  color: var(--whitecolor);
+}
+.faq-container {
+  padding-top: 100px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  border-bottom: 1px solid var(--primarycolor);
+  background: var(--bodycolor);
+  color: var(--primarycolor);
+}
+
+.faq-question {
+  padding: 15px;
+  cursor: pointer;
+  border-bottom: 1px solid var(--primarycolor);
+}
+
+.faq-answer {
+  padding: 15px;
+  display: none;
+}
+
+.faq-answer.active {
+  display: block;
+}

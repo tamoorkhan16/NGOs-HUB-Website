@@ -1,0 +1,210 @@
+
+.registerNgo_outer_container{
+    /* border: 2px solid black; */
+    width: 50%;
+    margin: 10px auto;
+  /* height: 140vh; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 20px;
+  background: var(--bodycolor);
+  box-shadow: 20px 20px 60px #bfa7d9, -20px -20px 60px #ffe1ff;
+  
+  }
+  .registerNgo_container {
+      position: relative;
+      width:100%;
+      /* background: var(--bodycolor); */
+      /* border: 3px solid red; */
+      padding: 25px 25px 0px 25px;
+      border-radius: 8px;
+      /* box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    
+  
+    }
+  
+  
+    .registerNgo_outer_container .registerNgo_header {
+      padding-top: 16px;
+      color: var(--primarycolor);
+      font-family: serif;
+      font-weight: 400;
+      font-size: 32px;
+      text-align: center;
+    }
+    
+    .registerNgo_container .registerNgo_form {
+      margin-top: 15px;
+      width: 100%;
+      /* border: 2px solid purple; */
+      display: flex;
+  align-items: center;
+      flex-direction: column;
+  
+    }
+    
+    .registerNgo_form .registerNgo_input-box {
+      width: 100%;
+      margin-top: 10px;
+      /* border: 2px solid black; */
+    }
+    
+    .registerNgo_input-box label {
+      color: var(--primarycolor);
+  
+    }
+    
+    .registerNgo_form :where(.registerNgo_input-box input, .registerNgo_input-box textarea, .registerNgo_select-box) {
+      position: relative;
+      height: 35px;
+      width: 100%;
+      outline: none;
+      font-size: 1rem;
+      color: var(--lilac);
+      margin-top: 5px;
+      border: 1px solid var(--lightprimarycolor);
+      /* border-radius: 6px; */
+      padding: 0 15px;
+      background: var(--bodycolor);
+    }
+  
+    .registerNgo_input-box ::placeholder{
+      font-size: 16px;
+      font-weight: 200;
+      color:var(--lilac) ;
+  
+    }
+    .registerNgo_input-box textarea::placeholder{
+  
+  color: var(--lilac);
+    }
+  
+    .registerNgo_input-box textarea{
+      height: 100px;
+      resize: none;
+      padding-top:10px ;
+    }
+    .registerNgo_input-box textarea:focus{
+      color: var(--primarycolor);
+  
+    }
+    .registerNgo_input-box input:focus {
+      box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+      color: var(--primarycolor);
+    }
+    
+    .registerNgo_form .registerNgo_column {
+      display: flex;
+      column-gap: 15px;
+    }
+    
+    
+    
+    .registerNgo_address :where(input, .registerNgo_select-box) {
+      margin-top: 10px;
+    }
+    
+    /* .registerNgo_select-box select {
+      height: 100%;
+      width: 100%;
+      outline: none;
+      border: none;
+      color: #808080;
+      font-size: 1rem;
+      background: #FCEDDA;
+    } */
+    
+    .registerNgo_outer_container button {
+      height: 40px;
+      color: var(--whitecolor);
+      font-size: 1rem;
+      font-weight: 400;
+      margin-top: 16px;
+      margin-bottom: 16px;
+      /* border: none; */
+      /* border-radius: 6px; */
+      padding-top: 12px;
+      padding-bottom: 12px;
+      cursor: pointer;
+      width: 250px;
+      transition: all 0.2s ease;
+      background: var(--primarycolor);
+      margin-bottom: 0px;
+  
+    }
+    .registerNgo_outer_container button:hover{
+      color: var(--primarycolor);
+    }
+  
+    .registerNgo_outer_container button:hover::before{
+      background-color: var(--bodycolor);
+    }
+    .registerNgo_outer_container button:hover::after{
+      background-color: var(--bodycolor);
+    }
+  
+  
+  
+  
+  
+  
+    .custum-file-upload {
+      /* border: 1px solid green; */
+      height: 200px;
+      width: 300px;
+      display: flex;
+      flex-direction: column;
+      align-items: space-between;
+      gap: 20px;
+      cursor: pointer;
+      align-items: center;
+      justify-content: center;
+      border: 1px dashed #5c002952;
+      background-color: var(--bodycolor);
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0px 48px 35px -48px rgba(0, 0, 0, 0.1);
+    }
+  
+    .custum-file-upload .custum-file-upload_icon {
+      /* border: 2px solid yellow; */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  
+    .custum-file-upload .custum-file-upload_icon i {
+      /* height: 80px; */
+      font-size: 80px;
+      /* fill: rgba(75, 85, 99, 1); */
+      color:var(--primarycolor) ;
+    }
+  
+    .custum-file-upload .custum-file-upload_text {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  
+    .custum-file-upload .custum-file-upload_text span {
+      font-weight: 400;
+      color: var(--primarycolor);
+    }
+  
+    .custum-file-upload input {
+      display: none;
+    }
+    
+    .ngoregistration_textfield_plus_figure{
+      /* border: 2px solid brown; */
+      display: flex;
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+    }
+    

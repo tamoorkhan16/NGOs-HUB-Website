@@ -1,0 +1,17 @@
+.individual_page_community{
+background-color: var(--bodycolor);
+width: 100%;
+display: flex;
+padding: 25px;
+justify-content: space-between;
+}
+.member_name{
+    list-style: none;
+    margin-left: 12px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: var(--primarycolor);
+    font-weight: 500;
+}
+
+ 

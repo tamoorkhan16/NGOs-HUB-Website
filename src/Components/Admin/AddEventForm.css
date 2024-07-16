@@ -1,0 +1,123 @@
+.registerNgo_input-box_group{
+    /* border: 2px solid green; */
+    display: flex;
+    column-gap: 24px;
+}
+.addEventForm_outer_container{
+    width: 60%;
+    margin-top: 26px;
+}
+/* .ngo_registration_logo{
+
+    /* border: 1px solid red; */
+/* } */ 
+
+.registerNgo_container_left{
+    /* border: 3px solid black; */
+    display: flex;
+    justify-content: center;
+ 
+    align-items: center;
+
+
+}
+.cfu_upload{
+    height: 150px;
+    width: 100%;
+    /* border: 3px solid red; */
+}
+.input-div {
+    background-color: var(--primarycolor);
+    position: relative;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    padding: 10px;
+    margin: 10px;
+    border: 2px solid var(--primarycolor);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    /* box-shadow: 0px 0px 100px var(--primarycolor) , inset 0px 0px 10px var(--primarycolor),0px 0px 5px rgb(255, 255, 255); */
+    animation: flicker 2s linear infinite;
+  }
+  
+ .input-div .icon {
+    color: var(--bodycolor);
+    font-size: 2rem;
+    cursor: pointer;
+    animation: iconflicker 2s linear infinite;
+  }
+  
+  .input-div .input {
+    position: absolute;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer !important;
+  }
+  
+  /* @keyframes flicker {
+    0% {
+      border: 2px solid var(--primarycolor);
+      box-shadow: 0px 0px 100px var(--primarycolor) , inset 0px 0px 10px var(--primarycolor),0px 0px 5px rgb(255, 255, 255);
+    }
+  
+    5% {
+      border: none;
+      box-shadow: none;
+    }
+  
+    10% {
+      border: 2px solid var(--primarycolor);
+      box-shadow: 0px 0px 100px var(--primarycolor) , inset 0px 0px 10px var(--primarycolor),0px 0px 5px rgb(255, 255, 255);
+    }
+  
+    25% {
+      border: none;
+      box-shadow: none;
+    }
+  
+    30% {
+      border: 2px solid var(--primarycolor);
+      box-shadow: 0px 0px 100px var(--primarycolor) , inset 0px 0px 10px var(--primarycolor),0px 0px 5px rgb(255, 255, 255);
+    }
+  
+    100% {
+      border: 2px solid var(--primarycolor);
+      box-shadow: 0px 0px 100px var(--primarycolor) , inset 0px 0px 10px var(--primarycolor),0px 0px 5px rgb(255, 255, 255);
+    }
+  } */
+  
+  @keyframes iconflicker {
+    0% {
+      opacity: 1;
+    }
+  
+    5% {
+      opacity: 0.2;
+    }
+  
+    10% {
+      opacity: 1;
+    }
+  
+    25% {
+      opacity: 0.2;
+    }
+  
+    30% {
+      opacity: 1;
+    }
+  
+    100% {
+      opacity: 1;
+    }
+  }
+  @media screen and (max-width: 620px){
+
+    .addEventForm_outer_container{
+      width: 100%;
+    }
+  }

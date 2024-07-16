@@ -1,0 +1,59 @@
+.manageNgo_container{
+    /* border: 1px solid red; */
+    width: 100%;
+    margin-top: 100px;
+   
+}
+
+.manageNGO_list{
+
+ 
+    width: 80%;
+margin: 0px auto;
+display: flex;
+row-gap: 16px;
+flex-direction: column;
+}
+.manageNgo_single_item    img{
+    border-radius: 100%;
+    height: 60px;
+    width:  60px;
+}
+.manageNgo_single_item{
+    /* border: 1px solid red; */
+width: 100%;
+display: flex;
+align-items: center;
+justify-content: space-between;
+padding: 8px 36px 8px 36px;
+background-color: var(--bodycolor);
+border: 1px ridge var(--primarycolor);
+}
+
+.manageNgo_group{
+    /* border: 2px solid purple; */
+    display: flex;
+    width: 40%;
+    align-items: center;
+    column-gap: 64px;
+}
+
+.manageNgo_name{
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--primarycolor);
+
+}
+
+.manageNgo_single_item i{
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--primarycolor);
+    cursor: pointer;
+
+}
+.manageNgo_single_item i:hover{
+   transform: scale(1.5);
+   transition: all ease-in-out 0.2s;
+
+}

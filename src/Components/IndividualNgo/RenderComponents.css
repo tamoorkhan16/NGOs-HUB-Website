@@ -1,0 +1,7 @@
+.tamoor_center{
+    background-color: yellow;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50vh;
+}

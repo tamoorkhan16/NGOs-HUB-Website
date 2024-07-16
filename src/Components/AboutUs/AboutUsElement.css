@@ -1,0 +1,128 @@
+/* AboutUs.css */
+.about_container {
+  width: 100%;
+  /* border: 1px solid red; */
+  position: relative;
+  top: 50px;
+  color: var(--primarycolor);
+}
+.about_differ_para {
+  /* border: 1px solid green; */
+  padding: 40px 80px;
+}
+.about_differ_para_heading {
+  /* border: 1px solid orangered; */
+  font-weight: 500;
+  text-align: center;
+}
+.about_differ_paragraph {
+  margin-top: 18px;
+  /* border: 1px solid purple;  */
+  text-align: justify;
+}
+.bullets {
+  padding-left: 16px;
+}
+
+@media screen and (max-width: 700px) {
+  .about_differ_para {
+    padding: 8px 20px;
+  }
+  .about_differ_para_heading {
+    font-size: 19px;
+  }
+  .about_differ_paragraph {
+    font-size: 13px;
+  }
+}
+
+.dynamic_numbering_container {
+  /* border: 1px solid black; */
+  padding: 40px 80px;
+  display: flex;
+  justify-content: space-between;
+  column-gap: 40px;
+}
+
+.dynamic_numbering_container_box {
+  height: 100px;
+  width: 100px;
+  border-radius: 100%;
+  background-color: var(--primarycolor);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dynamic_numbering_container_box h3 {
+  color: var(--whitecolor);
+}
+
+.full_dynamic_numbering_container_box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 16px;
+}
+.about_us_flex_container {
+  width: 100%;
+  padding: 40px 80px;
+  /* display: flex; */
+  /* border: 1px solid purple; */
+}
+.about_us_team_heading {
+  border-bottom: 1px solid black;
+}
+.about_us_team_names {
+  /* border: 1px solid purple;  */
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.team_names_box {
+  /* border: 1px solid green; */
+  width: 30%;
+}
+
+.team_names_box h3 {
+  padding-top: 28px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid black;
+  /* width: 36%; */
+}
+
+.team_image {
+  /* border: 2px solid orange; */
+  border-radius: 50px / 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* background-color: red; */
+}
+
+.team_image img {
+  height: 200px;
+  width: 150px;
+  padding-top: 22px;
+  padding-bottom: 42px;
+  /* border: 1px solid black; */
+  /* border-radius: 50px/100px; */
+}
+
+.about_us_team_para {
+  display: flex;
+  padding-top: 4px;
+  column-gap: 12px;
+}
+/* Responsiveness */
+
+@media screen and (max-width: 800px) {
+  .about_us_team_names {
+    flex-direction: column;
+    align-items: center;
+  }
+  .team_names_box {
+    width: 100%;
+    /* border: 1px solid red; */
+  }
+}

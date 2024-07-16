@@ -1,0 +1,45 @@
+.individual_page_team {
+  /* border: 1px solid var(--primarycolor); */
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--bodycolor);
+  color: var(--primarycolor);
+  /* padding-bottom: 320px; */
+
+}
+.individual_page_team th,
+.individual_page_team td,
+.individual_page_team tr {
+  /* border: 1px solid var(--primarycolor); */
+  text-align: center;
+  padding-top: 16px;
+  padding-bottom: 16px;
+
+}
+
+.individual_page_team tr td img {
+  width: 70px;
+  height: 70px;
+  border-radius: 100%;
+  text-align: center;
+}
+.individual_page_projects{
+  padding-top: 26px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 32px;
+}
+.project_delete_button{
+  position: relative;
+  top: 5px;
+  left: 430px;
+  font-size: 22px;
+  color: var(--primarycolor);
+}
+
+.project_delete_button:hover{
+  transform: scale(1.3);
+  transition: all ease-in-out 0.2s;
+}
+
+@media screen and (max-width: 480px){}

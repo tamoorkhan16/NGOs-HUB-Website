@@ -1,0 +1,97 @@
+.indiviual_page_gallery{
+    background-color: var(--bodycolor);
+    padding: 25px;
+   
+    /* border: 2px solid red; */
+   
+    
+}
+
+.gallery_images_container{
+    /* border: 2px solid yellow; */
+width: 100%;
+    display: flex;
+    justify-content: center;
+flex-wrap: wrap;
+}
+
+.lg-react-element{
+    column-count: 5;
+}
+
+.gallery_image{
+    border-radius: 12px;
+max-width: 100%;
+max-height: 100%;
+transition: all 0.2s;
+margin-bottom: 12px;
+}
+
+.gallery_image:hover{
+    transform: scale(1.01);
+    filter: opacity(0.9);
+}
+
+.addGalleryImage{
+
+    border: 2px solid var(--whitecolor);
+    flex-direction: column;
+    color: var(--whitecolor);
+    width: 250px;
+    padding: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    font-weight: 700;
+    
+    background-color: var(--primarycolor);
+}
+.addGalleryImage label{
+    margin: 12px auto;
+}
+
+.addGalleryImage input{
+    margin: 0px auto;
+}
+
+.addGalleryImage button{
+    width: 80px;
+    border-radius: 12px;margin: 12px auto;
+    color: var(--primarycolor);
+    font-weight: 600;
+    background-color: var(--whitecolor);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.addteamMembers{
+    margin-top: 12px;
+    border: 2px solid var(--whitecolor);
+    flex-direction: column;
+    color: var(--whitecolor);
+    width: 300px;
+    padding: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-left: 25px;
+    row-gap: 8px;
+    font-weight: 700;
+    background-color: var(--primarycolor);
+}
+.addteamMembers button{
+    width: 80px;
+    border: 2px solid var(--whitecolor);
+   margin-top: 8px;
+    color: var(--primarycolor);
+    font-weight: 600;
+    background-color: var(--whitecolor);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.delete_icon_for_teamMember{
+margin-left: 32px;
+cursor: pointer;
+}
+.delete_icon_for_teamMember:hover{
+    transform: scale(1.5);
+    transition: all ease-in-out 0.2s;
+}

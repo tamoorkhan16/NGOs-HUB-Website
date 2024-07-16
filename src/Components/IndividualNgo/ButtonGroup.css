@@ -1,0 +1,45 @@
+.individual_Ngo_button_container{
+    /* border: 1px solid red; */
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    padding-left: 25px;
+    padding-right: 25px;
+
+}
+
+.ngo_button_render{
+    border: 1px solid var(--primarycolor);
+    border: none;
+    /* width: 90px; */
+    /* height: 30px; */
+    background-color: transparent;
+    color: var(--primarycolor);
+    font-size: 16px;
+    cursor: pointer;
+    padding: 6px 12px;
+}
+
+.ngo_button_render_selected{
+        border: 1px ridge var(--whitecolor);
+        /* width: 90px; */
+        /* height: 30px; */
+        background-color: var(--primarycolor);
+        color: var(--whitecolor);
+        font-size: 16px;
+        cursor: pointer;
+        padding: 6px 12px;
+}
+
+@media screen and (max-width: 480px){
+.individual_Ngo_button_container{
+    flex-direction: column;
+    /* align-items: flex-start; */
+    /* width: 120px; */
+    height: 50vh;
+    /* justify-content: flex-start; */
+    padding: 20px 0px 0px 0px;
+}
+}

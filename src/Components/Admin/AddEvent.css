@@ -1,0 +1,55 @@
+.addEvent_container {
+  width: 80%;
+  height: 80vh;
+  background-color: var(--bodycolor);
+  margin: 100px auto;
+}
+
+.addEvent_button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  bottom: 40px;
+  right: 80px;
+}
+
+.addEvent_box {
+  width: 70px;
+  height: 70px;
+  border-radius: 100%;
+  background: linear-gradient(
+    170deg,
+    var(--primarycolor) 0%,
+    rgb(31, 31, 31) 100%
+  );
+  /* position: relative; */
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.55);
+  cursor: pointer;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.addEvent_box:hover {
+  transform: scale(0.9);
+}
+
+.addEvent_box i {
+  color: whitesmoke;
+  font-size: 26px;
+}
+
+.event_front_image{
+  padding-top: 10px;
+}
+
+.event_delete_button{
+position: relative;
+color: var(--primarycolor);
+font-size: 26px;
+left: 270px;
+top: 20px;
+}
+

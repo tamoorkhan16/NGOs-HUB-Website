@@ -1,0 +1,23 @@
+.adminPanel_naviagtionBar a{
+    font-size: 19px;
+    color: var(--primarycolor);
+    text-decoration: none;
+    font-weight: 400;
+}
+.adminPanel_naviagtionBar{
+    height: 50px;
+}
+
+.adminPanel_naviagtionBar ul li{
+    list-style: none;
+}
+
+.adminPanel_naviagtionBar img{
+    height: 40px;
+    width: 40px;
+
+}
+.adminPanel_logo{
+    position: relative;
+    right: 20px;
+}

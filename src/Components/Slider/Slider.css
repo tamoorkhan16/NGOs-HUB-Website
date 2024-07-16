@@ -1,0 +1,104 @@
+.container_outer_Swiper {
+  position: relative;
+  top: 60px;
+  padding-top: 24px;
+  padding-left: 18px;
+  padding-right: 18px;
+  /* border: 3px solid red; */
+  height: 70vh;
+  display: flex;
+  background-color: var(--bodycolor);
+}
+
+.swiper_container {
+  /* border: 3px solid black; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* width: 10%; */
+  /* height: 90vh; */
+}
+.image_for_swipe img {
+  height: 100%;
+  width: 100%;
+  border-radius: 16px;
+}
+
+.image_for_swipe {
+  padding: 0px;
+  width: 60%;
+  height: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card_active {
+  border: 1px groove var(--whitecolor);
+  border-radius: 16px;
+}
+
+.slider-arrow {
+  color: var(--whitecolor);
+  font-size: 24px;
+  height: 50px;
+  width: 50px;
+}
+
+.swiper-button-prev:after {
+  content: "";
+}
+.swiper-button-next:after {
+  content: "";
+}
+
+.swiper-pagination-bullet-active {
+  background-color: var(--primarycolor);
+}
+
+/* Slider.css */
+.loader-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+}
+
+.container_outer_Swiper.loading {
+  display: none;
+}
+
+/* Responsiveness */
+@media screen and (max-width: 996px) {
+  .container_outer_Swiper {
+    height: 27vh;
+  }
+  .swiper_container {
+    height: 25vh;
+  }
+}
+@media screen and (max-width: 770px) {
+  .container_outer_Swiper {
+    height: 45vh;
+  }
+  .swiper_container {
+    height: 40vh;
+  }
+}
+@media screen and (max-width: 602px) {
+  .container_outer_Swiper {
+    height: 45vh;
+  }
+  .swiper_container {
+    height: 40vh;
+  }
+}
+@media screen and (max-width: 362px) {
+  .container_outer_Swiper {
+    height: 50vh;
+  }
+  .swiper_container {
+    height: 45vh;
+  }
+}

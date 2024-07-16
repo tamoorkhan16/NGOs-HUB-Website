@@ -1,0 +1,37 @@
+.dropdown{
+    position: absolute;
+    background-color: var(--primarycolor);
+    top: 50px;
+    width: 200px;
+    right: 0px;
+    border: 1px ridge var(--whitecolor);
+
+}
+
+.dropdown_list{
+    display: flex;
+    flex-direction: column;
+}
+
+.register_profile_class .dropdown ul li a{
+    color: var(--whitecolor);
+    font-size: 16px;
+    font-weight: 400;
+  text-decoration: none;
+
+
+}
+.dropdown_item{
+    width: 100%;
+    display: flex;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 6px;
+    justify-content: flex-start;
+    align-items: center;
+}
+.dropdown_clicked{
+display: none;
+}
+
+

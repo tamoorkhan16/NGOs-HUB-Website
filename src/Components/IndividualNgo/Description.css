@@ -1,0 +1,55 @@
+.Individual_page_description{
+
+    background-color: var(--bodycolor);
+    width: 100%;
+border: none;
+padding-bottom: 100px;
+
+}
+.description_boxes{
+    padding-top: 36px;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.description_boxes{ color: var(--primarycolor);
+}
+ 
+.description_boxes h2{
+    font-size: 18px;
+    padding-bottom: 8px;
+}
+
+.description_contact_item{
+    /* border:  1px solid red; */
+padding-bottom: 3px;
+    font-size: 14px;
+    
+}
+.description_contact_item i{
+    padding-right: 12px;
+}
+.description_contact_item h3{
+    font-size: 14px;
+    display: inline;
+}
+
+.online_presence_icon{
+    /* margin-left: 16px; */
+display: flex;
+
+}
+
+.online_presence_icon li a{
+    color: var(--primarycolor);
+
+}
+.online_presence_icon li a i{
+
+    font-size: 24px;
+    padding-right: 16px;
+}
+
+.online_presence_icon li{
+    list-style: none;
+}
