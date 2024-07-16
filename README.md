@@ -24,8 +24,8 @@ Volunteer Coordination: Connect volunteers with NGOs based on skills, availabili
 Firestore Integration: Seamless integration with Firestore for real-time data updates and storage.
 <br>
 Responsive Design: Optimized for both desktop and mobile devices, ensuring a smooth user experience across all platforms.
-Technologies Used <h3></h3>
-<br>
+ <h3>Technologies Used</h3>
+
 Frontend: ReactJS for dynamic and responsive user interfaces.
 <br>
 Backend: Firebase for authentication, database management, and hosting.
