@@ -52,7 +52,7 @@ function AdminLogin() {
  
 
           <form action="" className="signup_form">
-            <div class="relative">
+            <div className="relative">
               <input
                 className="input-cal input-base input input_sign_up_form"
                 placeholder=""
@@ -62,7 +62,7 @@ function AdminLogin() {
               />
               <label className="label-input">Email</label>
             </div>
-            <div class="relative">
+            <div className="relative">
               <input
                 className="input-cal input-base input input_sign_up_form"
                 placeholder=""
