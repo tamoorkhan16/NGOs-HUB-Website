@@ -33,4 +33,3 @@ Backend: Firebase for authentication, database management, and hosting.
 Validation: Yup for robust form validation, including custom validation for fields like Pakistani phone numbers.
 <br>
 Mapping: Integration with location services to provide accurate event locations and navigation.
-
