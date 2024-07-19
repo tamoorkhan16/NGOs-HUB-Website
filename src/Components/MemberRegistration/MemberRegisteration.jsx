@@ -9,23 +9,20 @@ import { memberValidationSchema } from "../ValidationSchemas/memberValidationSch
 
 function MemberRegisteration() {
   const params = useParams();
-
   const navigate = useNavigate();
   const [user, setUser] = useState(null);
-  const [errors, setErrors] = useState();
+  const [errors, setErrors] = useState({});
   const [formdata, setFormData] = useState({
     text: "",
     contact: "",
     email: "",
     blood: "",
-    province: "",
-    city: "",
     address: "",
   });
   const [data, setData] = useState([]);
 
-  // Check User State
   const auth = getAuth(app);
+
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
@@ -36,7 +33,6 @@ function MemberRegisteration() {
     });
   }, [auth]);
 
-  // Get data from Firestore
   useEffect(() => {
     const ngoID = params.ngoID;
     if (ngoID) {
@@ -45,8 +41,6 @@ function MemberRegisteration() {
       console.error("Invalid NGO ID");
     }
   }, [params]);
-
-  // Add Data to Firestore
 
   const handleClick = async (e) => {
     e.preventDefault();
@@ -72,13 +66,12 @@ function MemberRegisteration() {
       await addDoc(ValRef, {
         memtxtVal: formdata.text,
         memContact: formdata.contact,
-        memCity: formdata.city,
-        memProvince: formdata.province,
         memEmail: formdata.email,
         memBlood: formdata.blood,
         memAddress: formdata.address,
       })
         .then((val) => {
+          console.log("Document written with ID: ", val.id);
           toast.success("Member registered successfully", {
             position: "top-center",
             autoClose: 2000,
@@ -96,14 +89,13 @@ function MemberRegisteration() {
             contact: "",
             email: "",
             blood: "",
-            province: "",
-            city: "",
             address: "",
           });
 
-          setErrors({}); // Refresh data after adding new member
+          setErrors({});
         })
         .catch((error) => {
+          console.error("Error adding document: ", error);
           toast.error("Error registering member: " + error.message, {
             position: "top-center",
             autoClose: 2000,
@@ -126,7 +118,7 @@ function MemberRegisteration() {
       }
 
       setErrors(newError);
-      console.error("Error:", error); // Added logging
+      console.error("Validation Error:", error);
     }
   };
 
@@ -164,7 +156,7 @@ function MemberRegisteration() {
                     onChange={handleChange}
                     value={formdata.text}
                   />
-                  {errors && (
+                  {errors.text && (
                     <div className="signupformerror">{errors.text}</div>
                   )}
                 </div>
@@ -180,7 +172,7 @@ function MemberRegisteration() {
                     onChange={handleChange}
                     value={formdata.email}
                   />
-                  {errors && (
+                  {errors.email && (
                     <div className="signupformerror">{errors.email}</div>
                   )}
                 </div>
@@ -198,73 +190,49 @@ function MemberRegisteration() {
                     value={formdata.contact}
                     autoComplete="off"
                   />
-                  {errors && (
+                  {errors.contact && (
                     <div className="signupformerror">{errors.contact}</div>
                   )}
                 </div>
                 <div className="registerNgo_input-box">
                   <label>Blood Group</label>
-                  <input
-                    required
-                    placeholder="Enter your Blood Group"
-                    type="text"
+                  <select
                     name="blood"
-                    autoComplete="off"
                     onChange={handleChange}
                     value={formdata.blood}
-                  />
-                  {errors && (
+                    id="blood"
+                  >
+                    <option value="A+">A+</option>
+                    <option value="A-">A-</option>
+                    <option value="B+">B+</option>
+                    <option value="B-">B-</option>
+                    <option value="AB+">AB+</option>
+                    <option value="AB-">AB-</option>
+                    <option value="O+">O+</option>
+                    <option value="O-">O-</option>
+                  </select>
+                  {errors.blood && (
                     <div className="signupformerror">{errors.blood}</div>
                   )}
                 </div>
               </div>
 
-              <div className="registerNgo_input_group">
+              <div className="registerNgo_input-group">
                 <div className="registerNgo_input-box">
-                  <label>Province</label>
+                  <label>Address</label>
                   <input
+                    required=""
+                    placeholder="Enter your address"
+                    name="address"
                     type="text"
-                    name="province"
-                    id="province"
                     autoComplete="off"
                     onChange={handleChange}
-                    value={formdata.province}
-                    placeholder="Enter your province"
+                    value={formdata.address}
                   />
-                  {errors && (
-                    <div className="signupformerror">{errors.province}</div>
+                  {errors.address && (
+                    <div className="signupformerror">{errors.address}</div>
                   )}
                 </div>
-                <div className="registerNgo_input-box">
-                  <label>City</label>
-                  <input
-                    type="text"
-                    name="city"
-                    id="city"
-                    placeholder="Enter your city"
-                    autoComplete="off"
-                    onChange={handleChange}
-                    value={formdata.city}
-                  />
-                  {errors && (
-                    <div className="signupformerror">{errors.city}</div>
-                  )}
-                </div>
-              </div>
-              <div className="registerNgo_input-box">
-                <label>Address</label>
-                <input
-                  required=""
-                  placeholder="Enter your address"
-                  name="address"
-                  type="text"
-                  autoComplete="off"
-                  onChange={handleChange}
-                  value={formdata.address}
-                />
-                {errors && (
-                  <div className="signupformerror">{errors.address}</div>
-                )}
               </div>
             </div>
             <button

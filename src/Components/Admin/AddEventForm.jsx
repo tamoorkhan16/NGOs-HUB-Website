@@ -76,8 +76,8 @@ function AddEventForm() {
         eventDate: formdata.date,
         eventDescription: formdata.description,
         eventTime: formdata.time,
-        userID: user.uid,
-        userEmail: user.email,
+        // userID: user.uid,
+        // userEmail: user.email,
       }).then((val) => {
         toast.success("Data Added successfully", {
           position: "top-center",
@@ -88,7 +88,9 @@ function AddEventForm() {
           draggable: true,
           progress: undefined,
           theme: "light",
-        });
+        }).then(
+          navigate("/AddEvents")
+        );
 
 
         setFormData({
@@ -138,10 +140,7 @@ function AddEventForm() {
       [name]: value,
     }));
   };
-// Handle Navigate
-const handleNavigate=()=>{
-  navigate("/AddEvents")
-}
+
   return (
     <>
       <section class="registerNgo_outer_container addEventForm_outer_container">
@@ -293,7 +292,6 @@ const handleNavigate=()=>{
             </div>
             <div className="individual_cabin_button">
             <button className="home_ngo_card_load_more_button">Add </button>
-            <button className="home_ngo_card_load_more_button" onClick={handleNavigate}>Back</button>
             </div>
             <ToastContainer />
           </form>

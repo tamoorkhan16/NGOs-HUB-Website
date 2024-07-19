@@ -164,7 +164,7 @@
   }
   .ind_ngoPage_header_buttons{
 width: 100%;
-justify-content: space-between;
+/* justify-content: space-between; */
 padding-left: 48px;
 padding-right: 48px;
 padding-bottom: 16px;
@@ -175,7 +175,7 @@ padding-bottom: 16px;
 @media screen and (max-width: 480px){
     .ind_ngoPage_bar{
         /* width: 120px; */
-        height: 50vh;
+        height: 22vh;
     }
 }
 @media screen and (max-width: 390px){

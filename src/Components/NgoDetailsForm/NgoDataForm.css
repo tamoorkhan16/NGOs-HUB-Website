@@ -39,6 +39,14 @@
   padding: 12px;
   margin-bottom: 6px;
 }
+.individual_field_box select {
+  height: 32px;
+  background-color: var(--bodycolor);
+  border: 1px groove var(--primarycolor);
+  border-bottom-right-radius: 10px;
+  padding-left: 12px;
+  margin-bottom: 6px;
+}
 
 .individual_field_box input:focus {
   outline: none;

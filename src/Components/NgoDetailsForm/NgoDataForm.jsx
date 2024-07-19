@@ -77,16 +77,18 @@ function NgoDataForm() {
         userID: user.uid,
         userEmail: user.email,
       }).then((val) => {
-        toast.success("Data Added successfully", {
-          position: "top-center",
-          autoClose: 2000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: "light",
-        });
+        toast
+          .success("Data Added successfully", {
+            position: "top-center",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+          })
+          .then(navigate("/Home"));
         // Reset form fields
         setFormData({
           text: "",
@@ -162,13 +164,36 @@ function NgoDataForm() {
           </div>
           <div className="individual_field_box">
             <label htmlFor="">Ngo Domain</label>
-            <input
+            {/* <input
               type="text"
               name="domain"
               onChange={handleChange}
               value={formdata.domain}
               autoComplete="off"
-            />
+            /> */}
+            <select
+              name="domain"
+              id="domain"
+              onChange={handleChange}
+              value={formdata.domain}
+            >
+              <option value="Education">Education</option>
+              <option value="Health Care">Health Care</option>
+              <option value="Human Rights">Human Rights</option>
+              <option value="Environmental Conservation">
+                Environmental Conservation
+              </option>
+              <option value="Poverty Alleviation">Poverty Alleviation</option>
+              <option value="Gender Equality">Gender Equality</option>
+              <option value="Disaster Relief">Disaster Relief</option>
+              <option value="Children and Youth">Children and Youth</option>
+              <option value="Animal Welfare">Animal Welfare</option>
+              <option value="Arts and Culture">Arts and Culture</option>
+              <option value="Community Development">
+                Community Development
+              </option>
+              <option value="Mental Health">Mental Health</option>
+            </select>
             {errors && <div className="signupformerror">{errors.domain}</div>}
           </div>
           <div className="individual_field_box">
@@ -256,12 +281,6 @@ function NgoDataForm() {
             className="NgoDataFormButton home_ngo_card_load_more_button"
           >
             Register
-          </button>
-          <button
-            className="NgoDataFormButton home_ngo_card_load_more_button"
-            onClick={MovetoNext}
-          >
-            Next
             <ToastContainer />
           </button>
         </div>
