@@ -139,13 +139,14 @@ function NgoDataForm() {
     }));
   };
 
-  const MovetoNext = () => {
+  const handleNavigate = () => {
     navigate("/Home");
   };
 
   return (
     <>
       <main className="NgoDataFormContainer">
+      <i className="fa-solid fa-xmark cross-icon" onClick={handleNavigate}></i>  
         <div className="NgoRegisterationFormHeading">
           <h2>NGO Registration Form</h2>
         </div>

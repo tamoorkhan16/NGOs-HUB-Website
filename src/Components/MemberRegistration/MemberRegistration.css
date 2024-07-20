@@ -8,6 +8,7 @@
   align-items: center;
   justify-content: center;
   padding-bottom: 20px;
+  border-radius: 12px;
   background: var(--bodycolor);
   box-shadow: 20px 20px 60px #bfa7d9, -20px -20px 60px #ffe1ff;
 }
@@ -200,7 +201,7 @@
   font-size: 25px;
   color: var(--primarycolor);
   position: absolute;
-  right: 30px;
+  right: 5%;
   top: -30px;
   cursor: pointer;
 }

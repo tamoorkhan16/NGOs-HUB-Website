@@ -141,9 +141,14 @@ function AddEventForm() {
     }));
   };
 
+  // Handle Navigate
+  const handleNavigate =()=>{
+    navigate(`/AddEvents`)
+  }
   return (
     <>
       <section class="registerNgo_outer_container addEventForm_outer_container">
+      <i className="fa-solid fa-xmark crx-icon" onClick={handleNavigate}></i>  
         <header className="registerNgo_header">Event Registration Form</header>
         <section class="registerNgo_container">
           <form class="registerNgo_form" onSubmit={handleClick}>
