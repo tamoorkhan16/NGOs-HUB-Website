@@ -1,14 +1,19 @@
 * {
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
-  }
-:root{
-    --primarycolor:#5c0029;
-    --secondarycolor:#50c878;
-    --bodycolor:#e7d0ff;
-    --whitecolor:#ffffff;
-    --blackcolor:#000000;
-    --lilac:#C8A2C8;
-    --lightprimarycolor:#5c002952;   
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+:root {
+  --primarycolor: #5c0029;
+  --secondarycolor: #50c878;
+  /* --bodycolor: #DFF0D8; */
+  /* --bodycolor: #f4edfb;   (Done) */
+  --bodycolor: #f0e2fe;   
+  /* --bodycolor: #ecdcfd;   (second) */
+  /* --bodycolor: #e7d0ff;    */
+  --whitecolor: #ffffff;
+  --blackcolor: #000000;
+  --lilac: #c8a2c8;
+  --lightprimarycolor: #5c002952;
 }

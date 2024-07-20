@@ -9,6 +9,7 @@ import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
 import { addDoc, collection, getDoc, doc } from "firebase/firestore";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import "./UserngopageElement.css"
+import ImageLoader from "../Loading/ImageLoader";
 
 function UserngopageElement() {
   const params = useParams();
@@ -133,7 +134,8 @@ function UserngopageElement() {
    </div>
         <section className="ind_ngoPage_header">
           <div className="ind_ngoPage_logo">
-            <img src={data.imgURL} alt="" />
+            {/* <img src={data.imgURL} alt="" /> */}
+            <ImageLoader src={data.imgURL} alt="Ngo Logo Image"/>
             <div className="ind_ngoName">
               <h1>{data.txtVal}</h1>
               <p>{data.ngoDomain}</p>
