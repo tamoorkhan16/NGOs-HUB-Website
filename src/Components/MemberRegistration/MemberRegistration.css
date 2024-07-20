@@ -195,8 +195,18 @@
   justify-content: center;
   align-items: center;
 }
+
+.cross_icon{
+  font-size: 25px;
+  color: var(--primarycolor);
+  position: absolute;
+  right: 30px;
+  top: -30px;
+  cursor: pointer;
+}
  @media screen and (max-width:680px) {
   .registerNgo_outer_container{
     width: 95%;
   }
  }
+

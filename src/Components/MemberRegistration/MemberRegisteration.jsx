@@ -9,6 +9,9 @@ import { memberValidationSchema } from "../ValidationSchemas/memberValidationSch
 
 function MemberRegisteration() {
   const params = useParams();
+
+console.log(params)
+
   const navigate = useNavigate();
   const [user, setUser] = useState(null);
   const [errors, setErrors] = useState({});
@@ -81,7 +84,7 @@ function MemberRegisteration() {
             draggable: true,
             progress: undefined,
             theme: "light",
-          });
+          }).then( navigate(`/NgoPage/view/${params.ngoID}`));
           getData(ngoID);
 
           setFormData({
@@ -137,11 +140,17 @@ function MemberRegisteration() {
     }));
   };
 
+  const handleNavigate =()=>{
+    navigate(`/NgoPage/view/${params.ngoID}`)
+  }
+
   return (
     <>
       <section className="Contact_info_outer_container registerNgo_outer_container">
+     
         <header className="registerNgo_header">NGO Contact Information</header>
         <section className="registerNgo_container">
+          <i className="fa-solid fa-xmark cross_icon" onClick={handleNavigate}></i>  
           <form className="registerNgo_form" action="#">
             <div className="contact_info_form_container">
               <div className="registerNgo_input_group">
@@ -241,10 +250,13 @@ function MemberRegisteration() {
             >
               Finish
             </button>
+          
             <ToastContainer />
+    
           </form>
         </section>
       </section>
+    
     </>
   );
 }

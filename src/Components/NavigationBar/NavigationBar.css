@@ -148,7 +148,9 @@
   transform: translateY(-0.25rem);
   opacity: 1;
 }
-
+.icon_Back{
+  cursor: pointer;
+}
 /* Media Queries */
 
 @media screen and (max-width: 950px) {

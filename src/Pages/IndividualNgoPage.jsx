@@ -1,7 +1,8 @@
 import React from "react";
 
 import IndividualNgoPageElement from "../Components/IndividualNgo/IndividualNgoPageElement";
-import NavigationBar from "../Components/NavigationBar/NavigationBar";
+import NavigationBarWithBackButton from "../Components/NavigationBar/NavigationBarWithBackButton";
+
 
 
 
@@ -9,7 +10,7 @@ function IndividualNgoPage() {
 
   return (
     <>
-     <NavigationBar/>
+     <NavigationBarWithBackButton/>
       <IndividualNgoPageElement/>
           </>
   );
