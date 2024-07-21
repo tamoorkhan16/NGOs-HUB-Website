@@ -132,7 +132,7 @@ function UserngopageElement() {
 
    <h2>Hello! {data.userEmail}</h2>
    </div>
-        <section className="ind_ngoPage_header">
+        <section className="user_ind_ngoPage_header">
           <div className="ind_ngoPage_logo">
             {/* <img src={data.imgURL} alt="" /> */}
             <ImageLoader src={data.imgURL} alt="Ngo Logo Image"/>

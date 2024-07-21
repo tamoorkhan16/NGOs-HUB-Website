@@ -15,10 +15,11 @@ function Slider() {
   const [imagesLoaded, setImagesLoaded] = useState(0);
 
   const Slide_Images = [
-    { image: "Images/Slider/Slider1.jpg" },
-    // { image: "Images/Slider/Slider5.jpg" },
-    { image: "Images/Slider/Slider2.jpg" },
-    { image: "Images/Slider/Slider4.jpg" },
+    { image: "Images/Slider/Slider1.jpeg" }, 
+    { image: "Images/Slider/Slider2.jpeg" }, 
+    { image: "Images/Slider/Slider3.jpeg" }, 
+    { image: "Images/Slider/Slider4.jpg" }, 
+    
   ];
 
   useEffect(() => {

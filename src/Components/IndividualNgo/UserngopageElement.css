@@ -49,3 +49,13 @@ width: 90%;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
    margin-top: 80px;
 }
+
+.user_ind_ngoPage_header {
+    /* border: 2px solid green; */
+    height: 180px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--bodycolor);
+    border-bottom: 1px solid var(--primarycolor);
+  }

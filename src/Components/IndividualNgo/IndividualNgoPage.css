@@ -134,7 +134,7 @@
 }
 @media screen and (max-width: 800px) {
   .ind_ngoName p {
-    font-size: 20px;
+    font-size: 19px;
   }
   .ind_ngoName h1 {
     font-size: 32px;
@@ -175,7 +175,7 @@ padding-bottom: 16px;
 @media screen and (max-width: 480px){
     .ind_ngoPage_bar{
         /* width: 120px; */
-        height: 22vh;
+        height: 200px;
     }
 }
 @media screen and (max-width: 390px){
@@ -187,7 +187,7 @@ margin-top: 18px;
 }
 
 .ind_ngoName p {
-    font-size: 18px;
+    font-size: 15px;
   }
   .ind_ngoName h1 {
     font-size: 26px;
