@@ -6,6 +6,7 @@ import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
 import { addDoc, collection, getDocs } from "firebase/firestore";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
+import EventLoadingPage from "../Loading/EventLoadingPage";
 
 function EventsElement() {
   const navigate = useNavigate();
@@ -24,6 +25,7 @@ function EventsElement() {
 
   // get data from firestore
   const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true); // Loading state
 
   // To Check User State
   const auth = getAuth(app);
@@ -74,7 +76,7 @@ function EventsElement() {
     const dataDB = await getDocs(ValRef);
     const allData = dataDB.docs.map((val) => ({ ...val.data(), id: val.id }));
     setData(allData);
-    // console.log(dataDB);
+    setLoading(false); // Set loading to false after data is fetched
   };
 
   useEffect(() => {
@@ -90,13 +92,17 @@ function EventsElement() {
     }));
   };
 
+  if (loading) {
+    return <EventLoadingPage />;
+  }
+
   return (
     <>
       <div className="events_main_container">
         <div className="events_main_container_heading">Events</div>
 
         {data.map((v) => (
-          <div className="event_card">
+          <div className="event_card" key={v.id}>
             <img src={v.imgURL} alt="Event" />
             <div className="event__card__content">
               <div className="event__card__content__inner__box">
@@ -112,6 +118,7 @@ function EventsElement() {
                       <a
                         href="https://maps.app.goo.gl/naHMZBghSrCcKprf6"
                         target="_blank"
+                        rel="noopener noreferrer"
                       >
                         {v.eventLocation}
                       </a>
@@ -131,7 +138,7 @@ function EventsElement() {
                 </div>
 
                 <div className="event_card_content_right_side">
-                  <img src={v.imgURL} alt="" srcset="" />
+                  <img src={v.imgURL} alt="" srcSet="" />
                 </div>
               </div>
             </div>

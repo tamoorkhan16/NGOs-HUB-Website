@@ -14,6 +14,7 @@ import {
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+import EventLoadingPage from "../Loading/EventLoadingPage";
 
 function ManageNgos() {
   // For User State
@@ -35,7 +36,7 @@ function ManageNgos() {
 
   // get data from firestore
   const [data, setData] = useState([]);
-
+  const [loading, setLoading] = useState(true); // Loading state
   // To Check User State
   const auth = getAuth(app);
   useEffect(() => {
@@ -88,6 +89,7 @@ function ManageNgos() {
     const dataDB = await getDocs(ValRef);
     const allData = dataDB.docs.map((val) => ({ ...val.data(), id: val.id }));
     setData(allData);
+    setLoading(false); // Set loading to false after data is fetched
   };
 
   useEffect(() => {
@@ -131,6 +133,10 @@ function ManageNgos() {
         theme: "light",});
     }
   };
+
+  if (loading) {
+    return <EventLoadingPage/>;
+  }
 
   return (
     <>

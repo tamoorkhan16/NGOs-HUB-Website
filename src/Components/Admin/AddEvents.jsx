@@ -4,13 +4,17 @@ import "./AddEvent.css";
 import { imgDb, txtDb, app } from "../Firebase/firebase";
 import { v4 } from "uuid";
 import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
-import { addDoc, collection, getDocs , doc, deleteDoc} from "firebase/firestore";
+import {
+  addDoc,
+  collection,
+  getDocs,
+  doc,
+  deleteDoc,
+} from "firebase/firestore";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
-
-
-
+import EventLoadingPage from "../Loading/EventLoadingPage";
 
 function AddEvents() {
   const navigate = useNavigate();
@@ -24,13 +28,12 @@ function AddEvents() {
     location: "",
     date: "",
     description: "",
-    time:"",
-   
-    
+    time: "",
   });
 
   // get data from firestore
   const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true); // Loading state
 
   // To Check User State
   const auth = getAuth(app);
@@ -69,10 +72,10 @@ function AddEvents() {
       eventLocation: formdata.location,
       eventDate: formdata.date,
       eventDescription: formdata.description,
-     eventTime:formdata.time,
+      eventTime: formdata.time,
       userID: user.uid,
       userEmail: user.email,
-    })
+    });
   };
 
   // Function Get data from firestore
@@ -81,6 +84,7 @@ function AddEvents() {
     const dataDB = await getDocs(ValRef);
     const allData = dataDB.docs.map((val) => ({ ...val.data(), id: val.id }));
     setData(allData);
+    setLoading(false); // Set loading to false after data is fetched
     // console.log(dataDB);
   };
 
@@ -97,103 +101,102 @@ function AddEvents() {
     }));
   };
 
-
-    // Handle Delete
-    const handleDelete = async (id) => {
-      try {
-        const deleteVal = doc(txtDb, "Events", id);
-        await deleteDoc(deleteVal);
-        toast.success("Ngo deleted successfully", {
-          position: "top-center",
-          autoClose: 2000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: "light",});
-        getData(); // Refresh data after deletion
-      } catch (error) {
-        console.log(error);
-        toast.error("Error deleting NGO: " + error.message, {
-          position: "top-center",
-          autoClose: 2000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: "light",});
-      }
-    };
-  
+  // Handle Delete
+  const handleDelete = async (id) => {
+    try {
+      const deleteVal = doc(txtDb, "Events", id);
+      await deleteDoc(deleteVal);
+      toast.success("Ngo deleted successfully", {
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+      getData(); // Refresh data after deletion
+    } catch (error) {
+      console.log(error);
+      toast.error("Error deleting NGO: " + error.message, {
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+    }
+  };
+  if (loading) {
+    return <EventLoadingPage />;
+  }
   return (
     <>
       <AdminPanel />
-{/* ---------------------------- */}
+      {/* ---------------------------- */}
 
+      <div className="events_main_container">
+        {data.map((v) => (
+          <div className="event_card">
+            <img src={v.imgURL} alt="Event" />
+            <div className="event__card__content">
+              <div className="event__card__content__inner__box">
+                <div className="event_card_content_left_side">
+                  <p className="event__card__title">{v.txtVal}</p>
+                  <p className="event__card__description">
+                    {v.eventDescription}
+                  </p>
 
-<div className="events_main_container">
+                  <div className="event_card_group">
+                    <h3>Location:</h3>
+                    <p className="event__card__location">
+                      <a href="" target="_blank">
+                        {v.eventLocation}
+                      </a>
+                    </p>
+                    <i
+                      className="fa-solid fa-trash event_delete_button"
+                      onClick={() => handleDelete(v.id)}
+                    ></i>
+                  </div>
+                  <div className="event__card__datetime_box">
+                    <div className="event_card_group">
+                      <h3>Date:</h3>
+                      <p className="event__card__date">{v.eventDate}</p>
+                    </div>
 
+                    <div className="event_card_group">
+                      <h3>Time:</h3>
+                      <p className="event__card__time">{v.eventTime}</p>
+                    </div>
+                  </div>
+                </div>
 
-{data.map((v) => (
-      
-      <div className="event_card">
-      <img src={v.imgURL} alt="Event" />
-      <div className="event__card__content">
-        <div className="event__card__content__inner__box">
-          <div className="event_card_content_left_side">
-            <p className="event__card__title">{v.txtVal}</p>
-            <p className="event__card__description">
-            {v.eventDescription}
-            </p>
-
-            <div className="event_card_group">
-              <h3>Location:</h3>
-              <p className="event__card__location">
-                <a
-                  href=""
-                  target="_blank"
-                >
-                  {v.eventLocation}
-                </a>
-              </p>
-              <i className="fa-solid fa-trash event_delete_button" onClick={() => handleDelete(v.id)}></i>
-
-            </div>
-            <div className="event__card__datetime_box">
-              <div className="event_card_group">
-                <h3>Date:</h3>
-                <p className="event__card__date">{v.eventDate}</p>
-              </div>
-
-              <div className="event_card_group">
-                <h3>Time:</h3>
-                <p className="event__card__time">{v.eventTime}</p>
+                <div className="event_card_content_right_side">
+                  <img src={v.imgURL} alt="" srcset="" />
+                </div>
               </div>
             </div>
           </div>
-
-          <div className="event_card_content_right_side">
-            <img src={v.imgURL} alt="" srcset="" />
-          </div>
-        </div>
+        ))}
       </div>
-    </div>
-    
-  ))}
 
-
-
-</div>
-
-{/* ---------------------------- */}
+      {/* ---------------------------- */}
       <div class="addEvent_button">
-        <div class="addEvent_box" onClick={()=>{navigate("/AddEventForm")}}>
+        <div
+          class="addEvent_box"
+          onClick={() => {
+            navigate("/AddEventForm");
+          }}
+        >
           <i class="fa-solid fa-plus"></i>
         </div>
       </div>
-      <ToastContainer/>
+      <ToastContainer />
     </>
   );
 }

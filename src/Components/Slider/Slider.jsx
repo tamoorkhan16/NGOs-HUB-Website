@@ -16,7 +16,7 @@ function Slider() {
 
   const Slide_Images = [
     { image: "Images/Slider/Slider1.jpg" },
-    { image: "Images/Slider/Slider5.jpg" },
+    // { image: "Images/Slider/Slider5.jpg" },
     { image: "Images/Slider/Slider2.jpg" },
     { image: "Images/Slider/Slider4.jpg" },
   ];
