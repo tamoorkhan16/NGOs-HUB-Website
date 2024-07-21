@@ -20,6 +20,7 @@ import ManageNgosPage from "./Pages/ManageNgosPage";
 import AddEventsPage from "./Pages/AddEventsPage";
 import AddEventFormPage from "./Pages/AddEventFormPage";
 import ForgotPasswordPage from "./Pages/ForgotPasswordPage";
+import CheckEmail from "./Components/Signup/ChecKEmail";
 
 function App() {
   return (
@@ -42,6 +43,7 @@ function App() {
         <Route path="/AddEventForm" element={<AddEventFormPage />} />
         <Route path="/NgoMangerLogin" element={<NgoManagerLoginPage />} />
         <Route path="/ForgotPassword" element={<ForgotPasswordPage />} />
+        <Route path="/CheckEmail" element={<CheckEmail/>} />
         <Route
           path="/UserNgoPage/view/:ngoID"
           element={<UserNgoPage />}
